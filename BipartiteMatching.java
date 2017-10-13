@@ -312,12 +312,13 @@ public class BipartiteMatching {
 		public static void main(String[] args) {
 				int V1 = Integer.parseInt(args[0]);
 				int V2 = Integer.parseInt(args[1]);
-				double[] p = {0.3, 0.4, 0.5};
+				double[] p = {0.1,0.2, 0.3};
+				double[] q = {0.6, 0.7, 0.8};
 				for(int i = 0; i < p.length; i++) {
 						int k = 50;
 						int sum = 0;
 						while(k -- > 0) {
-								Graph G = GraphGenerator.bipartite(V1, V2, p[i]);
+								Graph G = GraphGenerator.bipartiteUnuniform(V1, V2, p[i], q[i]);
 								//System.out.println(G);
 								BipartiteMatching matching = new BipartiteMatching(G);
 								sum += matching.size();
